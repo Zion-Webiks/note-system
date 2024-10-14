@@ -45,7 +45,6 @@ export class NotesService {
     return updatedNote;
   }
 
-  // Delete a note by its id and userId
   async delete(userId: string, id: string): Promise<Note> {
     const deletedNote = await this.noteModel.findOneAndDelete({ _id: id, userId }).exec();
     if (!deletedNote) {

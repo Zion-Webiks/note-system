@@ -16,7 +16,6 @@ export class NotesController {
       const userId = (req as any).user.sub;  
       const notes = await this.notesService.findAll(userId);
       return {
-        statusCode: 200,
         message: 'Notes retrieved successfully',
         notes,
       };
@@ -31,7 +30,6 @@ export class NotesController {
       const userId = (req as any).user.sub;  
       const note = await this.notesService.findById(userId, id);
       return {
-        statusCode: 200,
         message: 'Note retrieved successfully',
         note,
       };
@@ -47,7 +45,6 @@ export class NotesController {
       const userId = (req as any).user.sub; 
       const newNote = await this.notesService.create(userId, createNoteDto.title, createNoteDto.content);
       return {
-        statusCode: 201,
         message: 'Note created successfully',
         newNote,
       };
@@ -64,7 +61,6 @@ export class NotesController {
       const userId = (req as any).user.sub; 
       const updatedNote = await this.notesService.update(userId, id, createNoteDto.title, createNoteDto.content);
       return {
-        statusCode: 200,
         message: 'Note updated successfully',
         updatedNote,
       };
@@ -79,7 +75,6 @@ export class NotesController {
       const userId = (req as any).user.sub; 
       const deletedNote = await this.notesService.delete(userId, id);
       return {
-        statusCode: 200,
         message: 'Note deleted successfully',
         deletedNote,
       };

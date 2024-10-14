@@ -21,9 +21,7 @@ export class UserController {
         createUserDto.email
       );
       
-      // Return the response directly
       return {
-        statusCode: 201,
         message: 'User registered successfully',
         user,
       };
@@ -44,7 +42,6 @@ export class UserController {
         throw new BadRequestException('User not found');
       }
       return {
-        statusCode: 201,
         message: 'User profile retrieved successfully',
         user,
       };

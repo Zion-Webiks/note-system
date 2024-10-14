@@ -24,7 +24,6 @@ export class AuthController {
       });
   
       return {
-        statusCode: 201,
         message: 'Login successful',
       };
     } catch (error) {
@@ -37,7 +36,6 @@ export class AuthController {
   async logout(@Req() req: Request) {
     req.res.clearCookie('auth_token');
     return {
-      statusCode: 201,
       message: 'Logout successful',
     };
   }
